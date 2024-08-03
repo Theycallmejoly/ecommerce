@@ -1,0 +1,18 @@
+# Define all .py files as Python
+*.py linguist-language=Python
+
+# Ignore migrations directory (typically generated files)
+migrations/* linguist-vendored
+
+# Treat templates as HTML or ignore them if necessary
+*.html linguist-language=HTML
+
+# Treat CSS files as CSS
+*.css linguist-language=CSS
+
+# Treat JavaScript files as JavaScript
+*.js linguist-language=JavaScript
+
+# Example to ignore specific directories
+static/* linguist-vendored
+node_modules/* linguist-vendored
