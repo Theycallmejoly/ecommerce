@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+        h2 {
+            color: #333;
+        }
+        .product-info {
+            margin-bottom: 20px;
+        }
+        .product-info p {
+            margin: 5px 0;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Add to Cart</h2>
+
+    <!-- Display Product Information -->
+    <div class="product-info">
+        <h3>{{ product.name }}</h3>
+        <p>Price: ${{ product.price }}</p>
+        <p>Description: {{ product.description }}</p>
+    </div>
+
+    <!-- Form for Adding Product to Cart -->
+    <form method="post">
+        {% csrf_token %}
+        
+        <!-- Hidden input to store the product ID -->
+        <input type="hidden" name="product" value="{{ product.id }}">
+        
+        <!-- Render the quantity field from the form -->
+        {{ form.quantity.label_tag }} {{ form.quantity }}
+        
+        <!-- Submit Button -->
+        <button type="submit">Add to Cart</button>
+    </form>
+
+    <!-- Link to go back to the product list -->
+    <a href="{% url 'product_list' %}">Back to Product List</a>
+</div>
+
+</body>
+</html>
