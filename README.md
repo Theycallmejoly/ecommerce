@@ -166,10 +166,6 @@ your-repo-name/
 5. Push to the branch (`git push origin feature-branch`).
 6. Create a new Pull Request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
 For any questions or suggestions, feel free to contact the project maintainer at `theycallmejoly@outlook.com`.
