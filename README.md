@@ -1,6 +1,4 @@
-Certainly! Below is a README file for your e-commerce Django application:
 
----
 
 # E-commerce Django Application
 
